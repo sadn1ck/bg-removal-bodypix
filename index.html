@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Removal</title>
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+    <!-- Load BodyPix -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+</head>
+
+<body>
+    <h1>Background Removal w/ BodyPix</h1>
+    <div class="container parent">
+        <div class="video box">
+            <video id="video" autoplay width="640px" height="480px">
+
+            </video>
+        </div>
+        <div class="removed box">
+            <canvas id="canvas" autoplay>
+
+            </canvas>
+        </div>
+    </div>
+    <style>
+        h1 {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        #video,
+        #canvas {
+            border: 2px solid black;
+            text-align: center;
+            width: 640px;
+            height: 480px;
+        }
+
+        #canvas {
+            background-repeat: 'no-repeat';
+            background-image: url('bg.jpg');
+        }
+
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            flex: 1 1 150px;
+            /*  Stretching: */
+            flex: 0 1 150px;
+            /*  No stretching: */
+            margin: 5px;
+        }
+    </style>
+    <script defer src="main.js"></script>
+</body>
+
+</html>
